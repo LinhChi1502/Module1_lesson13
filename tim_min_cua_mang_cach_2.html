@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm giá trị nhỏ nhất của mảng</title>
+</head>
+<body>
+<input type="text" id="userInput">
+<input type="button" value="Add" onclick="addItem()">
+<input type="button" value="Sort" onclick="sortArray()">
+<p id="content"></p>
+<script>
+    let counter = 0;
+    let arr = [];
+
+    function addItem() {
+        if (counter < 10) {
+            let item = parseInt(document.getElementById("userInput").value);
+            arr.push(item);
+            counter++;
+            document.getElementById("userInput").value = "";
+        } else {
+            alert("Only 10 items!");
+        }
+    }
+let temp;
+    function sortArray() {
+        for (let i = 0; i < arr.length - 1; i++) {
+            for (let j = i+1; j < arr.length; j++) {
+                if (arr[i] < arr[j]) {
+                    temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        document.getElementById("content").innerHTML = "Mảng theo thứ tự giảm dần là " + arr;
+    }
+</script>
+</body>
+</html>

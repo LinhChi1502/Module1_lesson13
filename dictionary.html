@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dictionary</title>
+</head>
+<body>
+<input type="text" id="userInput">
+<input type="button" value="Find" onclick="searchWord()">
+<p id="vieWord"></p>
+<script>
+    function searchWord() {
+        let eng = ["orange", "peach", "mango", "banana", "grape", "lemon"];
+        let vie = ["quả cam", "quả đào", "quả xoài", "quả chuối", "quả nho", "quả chanh"];
+        let word = document.getElementById("userInput").value;
+        for (let i = 0; i < eng.length; i++) {
+            if (eng[i]===word) {
+                document.getElementById("vieWord").innerHTML = vie[i];
+                break;
+            } else if(vie[i]===word) {
+                document.getElementById("vieWord").innerHTML = eng[i];
+                break;
+            } else {
+                document.getElementById("vieWord").innerHTML = "không tìm thấy";
+            }
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhập và đảo ngược mảng số nguyên</title>
+</head>
+<body>
+<input type="text" id="userInput">
+<input type="button" value="Add" onclick="addValue()">
+<input type="button" value="Reverse" onclick="reverseArray()">
+<p id="content"></p>
+<script>
+    let arr = [];
+
+    function addValue() {
+        let numberItem = document.getElementById("userInput").value;
+        arr.push(numberItem);
+    }
+
+    function reverseArray() {
+        arr.reverse();
+        document.getElementById("content").innerHTML = arr;
+    }
+</script>
+</body>
+</html>

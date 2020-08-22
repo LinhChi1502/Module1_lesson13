@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nối các phần tử trong mảng chuỗi</title>
+</head>
+<body>
+<script>
+    let arr = ["Red", "Green", "White", "Black"];
+    let data = "\"";
+    for (i = 0; i < arr.length; i++) {
+        if (i == arr.length - 1) {
+            data += arr[i];
+        } else {
+            data += arr[i] + ",";
+        }
+    }
+    data += "\"";
+    document.write(data);
+</script>
+</body>
+</html>

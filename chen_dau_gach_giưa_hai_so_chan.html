@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chèn dấu gạch ngang giữa hai số chẵn</title>
+</head>
+<body>
+<script>
+    let userInput = prompt("Nhập vào dãy số ở đây: ");
+    let arr = [];
+    let data = "";
+    for (let i = 0; i < userInput.length; i++) {
+        arr.push(userInput[i]);
+    }
+    console.log(arr);
+
+    for (let j = 0; j < arr.length; j++) {
+        if ((arr[j]%2===0)&&(arr[j+1]%2===0)) {
+            data+=arr[j]+"-";
+        } else {
+            data+=arr[j];
+        }
+    }
+
+    document.write(data);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đếm số ký tự số trong mảng</title>
+</head>
+<body>
+<input type="text" id="userInput">
+<input type="button" value="Add" onclick="addItem()">
+<input type="button" value="Display" onclick="displayArr()">
+<p id="content"></p>
+<p id="numCount"></p>
+<script>
+    // khai báo một mảng ký tự
+    // kích thước của mảng
+    // đếm số ký tự số trong mảng.
+    let arr = [];
+
+    function addItem() {
+        let item = document.getElementById("userInput").value;
+        arr.push(item);
+        document.getElementById("userInput").value = "";
+    }
+
+    function displayArr() {
+        document.getElementById("content").innerHTML = "Kích thước của mảng là: " + arr.length;
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if ((arr[i] == 0) ||
+                (arr[i] == 1) ||
+                (arr[i] == 2) ||
+                (arr[i] == 3) ||
+                (arr[i] == 4) ||
+                (arr[i] == 5) ||
+                (arr[i] == 6) ||
+                (arr[i] == 7) ||
+                (arr[i] == 8) ||
+                (arr[i] == 9)) {
+
+                count += 1;
+            }
+        }
+        document.getElementById("numCount").innerHTML = "Số ký tự số là: " + count;
+    }
+</script>
+</body>
+</html>

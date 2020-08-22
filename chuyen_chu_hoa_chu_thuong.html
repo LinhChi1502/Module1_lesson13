@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển chữ hoa chữ thường</title>
+</head>
+<body>
+<script>
+    let myString = prompt("Nhập chuỗi vào đây: ");
+    let myNewString = "";
+    for (i = 0; i < myString.length; i++) {
+        if (myString[i] == myString[i].toUpperCase()) {
+            myNewString += myString[i].toLowerCase();
+        } else if (myString[i] == myString[i].toLowerCase()) {
+            myNewString += myString[i].toUpperCase();
+        }
+    }
+    document.write(myNewString);
+</script>
+</body>
+</html>

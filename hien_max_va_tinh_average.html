@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiện số lớn nhất và tính số trung bình</title>
+</head>
+<body>
+<input type="button" value="Add" onclick="pushItem()">
+<input type="button" value="Display Max" onclick="findMax()">
+<p id="max"></p>
+<input type="button" value="Average" onclick="findAverage()">
+<p id="average"></p>
+<script>
+    let arr = [];
+    function pushItem() {
+        let item = parseInt(prompt("Nhập số bạn muốn thêm vào mảng: "));
+        arr.push(item);
+    }
+  function findMax() {
+        let max = 0;
+        arr.forEach(function (e) {
+            if (arr[e]>max) {
+                max=arr[e];
+            }
+        })
+      document.getElementById("max").innerHTML = "Giá trị lớn nhất trong mảng là " + max;
+  }
+function findAverage() {
+        let sum = 0;
+        arr.forEach(function (e) {
+            sum +=e;
+        })
+document.getElementById("average").innerHTML = "Giá trị trung bình của các phần tử trong mảng là: " + sum/(arr.length);
+}
+</script>
+</body>
+</html>

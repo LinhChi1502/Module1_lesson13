@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Type Something Slowly</title>
+</head>
+<body>
+<p>Type something slowly</p>
+<textarea name="typePlace" id="userInput" cols="30" rows="10" onkeyup="typeSomething()"></textarea>
+<script>
+    let arr = ["T","Ô","I"," ","L","À"," ","M","Ộ","T"," ","Đ","Ứ","A"," ","N","G","Ố","C","."];
+    var data = "";
+    var i=0;
+    function typeSomething() {
+        for (;i<arr.length;) {
+            data+=arr[i];
+            i++;
+            break;
+        }
+        if (i>=20) {
+            data = "";
+            document.getElementById("userInput").value = "";
+            i=0;
+        }
+        document.getElementById("userInput").value = data;
+    }
+</script>
+</body>
+</html>

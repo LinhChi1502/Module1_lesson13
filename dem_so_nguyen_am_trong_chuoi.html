@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đếm số nguyên âm trong chuỗi</title>
+</head>
+<body>
+<input type="text" id="userInput">
+<input type="button" value="Add" onclick="addItem()">
+<p id="content"></p>
+<input type="button" value="Count" onclick="countItem()">
+<p id="result"></p>
+<script>
+
+  let str = ""
+    function addItem() {
+        var item = document.getElementById("userInput").value;
+        str+=item;
+
+    }
+
+    function countItem() {
+        countNum = 0;
+        for (var i of str) {
+            if (i=="-") {
+                countNum +=1;
+            }
+        }
+document.getElementById("result").innerHTML = "Số giá trị nguyên âm là " + countNum;
+    }
+</script>
+</body>
+</html>

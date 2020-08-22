@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xóa V khỏi mảng</title>
+</head>
+<body>
+<input type="text" id="userInput">
+<input type="button" value="Add" onclick="addItem()">
+<input type="text" id="vItem">
+<input type="button" value="Check V" onclick="checkV()">
+<p id="content"></p>
+<script>
+    let arr = [];
+    let count = 0;
+    function addItem() {
+        if (count < 10) {
+            let item = parseInt(document.getElementById("userInput").value);
+            arr.push(item);
+            count++;
+            document.getElementById("userInput").value = "";
+        } else {
+            alert("Only 10 items!");
+        }
+    }
+
+    function checkV() {
+        let vItem = document.getElementById("vItem").value;
+        let newArr = [];
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] != vItem) {
+                newArr.push(arr[i]);
+
+            }
+        }
+        document.getElementById("content").innerHTML = newArr;
+    }
+</script>
+</body>
+</html>

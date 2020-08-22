@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>V is in the array</title>
+</head>
+<body>
+<input type="text" id="userInput">
+<input type="button" value="add10Items" onclick="addItems()">
+<input type="text" id="vItem">
+<input type="button" value="addVItem" onclick="addV()">
+<input type="button" value="Check" onclick="checkV()">
+<p id="noti"></p>
+<script>
+    let arr = [];
+    let j = 0;
+    let vItem;
+
+    function addItems() {
+
+        if (j < 10) {
+            let item = parseInt(document.getElementById("userInput").value);
+            arr.push(item);
+            j++;
+            document.getElementById("userInput").value = "";
+        } else {
+            alert("Only 10 items!");
+        }
+    }
+
+    function addV() {
+        vItem = parseInt(document.getElementById("vItem").value);
+    }
+
+    function checkV() {
+        let index = -1;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] == vItem) {
+                index = i;
+                break;
+            }
+        }
+        if (index == -1) {
+            document.getElementById("noti").innerHTML = "V is not in the array";
+        } else {
+            document.getElementById("noti").innerHTML = "V is in the array";
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nối 2 mảng a và b thành mảng c gồm 20 số nguyên</title>
+</head>
+<body>
+<input type="text" id="firstArray">
+<input type="button" value="addFirstArray" onclick="addFirstArray()">
+<input type="text" id="secondArray">
+<input type="button" value="addSecondArray" onclick="addSecondArray()">
+<input type="button" value="DisplayResult" onclick="displayNewArr()">
+<p id="content"></p>
+<script>
+    let firstArray = [];
+    let N1 = 0;
+
+    function addFirstArray() {
+        if (N1 < 10) {
+            let item = parseInt(document.getElementById("firstArray").value);
+            firstArray.push(item);
+            N1++;
+            document.getElementById("firstArray").value = "";
+        } else {
+            alert("Only 10 items!");
+        }
+    }
+    let secondArray = [];
+    let N2 = 0;
+    function addSecondArray() {
+        if (N2<10) {
+            let item = parseInt(document.getElementById("secondArray").value);
+           secondArray.push(item);
+            N2++;
+            document.getElementById("secondArray").value = "";
+        } else {
+            alert("Only 10 items!");
+        }
+
+    }
+function displayNewArr() {
+    let newArray = firstArray.concat(secondArray);
+    document.getElementById("content").innerHTML = "Mảng mới là " + newArray;
+}
+</script>
+</body>
+</html>
